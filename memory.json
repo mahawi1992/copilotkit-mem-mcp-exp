@@ -1,0 +1,175 @@
+{
+  "result": {
+    "memories": [
+      {
+        "content": "CopilotKit is the simplest way to integrate production-ready Copilots into any product. Key Features: In-App AI Chatbot: Plug and play AI chatbot components, including support for headless UI. Copilot Readable State: Enables Copilots to read and understand the application state. Copilot Actions: Copilots can perform actions in the application. Generative UI: Render any component in the copilot chat interface. Copilot Textarea: Powerful AI autocompletion as a drop-in replacement for any textarea. AI Autosuggestions: AI-powered autosuggestions in your AI chat interface. Copilot Tasks: Let your copilots take actions proactively based on application state.",
+        "metadata": {},
+        "timestamp": "2024-12-01T18:47:01.297312"
+      },
+      {
+        "content": "CopilotKit Quickstart Guide: 1. Install dependencies: npm install @copilotkit/react-core @copilotkit/react-ui @copilotkit/runtime npm install openai. 2. Set up Copilot Runtime (Backend Endpoint) - Create an endpoint for handling copilot interactions. 3. Configure the CopilotKit Provider - Set up the provider component for managing copilot state. 4. Connect Copilot UI - Integrate the UI components to enable chat interface. The guide includes detailed steps for setting up a fully functional chatbot in your application.",
+        "metadata": {},
+        "timestamp": "2024-12-01T18:47:27.973811"
+      },
+      {
+        "content": "Frontend Actions in CopilotKit: The useCopilotAction hook allows copilots to take actions in the frontend. Key features: 1. Define actions with name, description, and parameters. 2. Implement handlers for the actions. 3. Actions can be triggered by the copilot based on user input. Example usage: Define an action like addTodoItem with parameters and a handler function. The copilot can then execute these actions through natural language interaction.",
+        "metadata": {},
+        "timestamp": "2024-12-01T18:48:59.051815"
+      },
+      {
+        "content": "Generative UI in CopilotKit: Allows embedding custom UI components in the chat window. Key features: 1. Render custom React components in chat UI using useCopilotAction with render function. 2. Fetch data and render - Combine handler for data fetching with render for UI display. 3. renderAndWait for Human-in-the-Loop (HITL) flows - Allow user interaction through UI components in chat. 4. Simple string rendering for basic messages. Examples include rendering calendar meetings, loading states, confirmation dialogs, and status messages.",
+        "metadata": {},
+        "timestamp": "2024-12-01T18:49:29.571819"
+      },
+      {
+        "content": "Backend Actions & Agents in CopilotKit: Overview of backend integration options. Key components: 1. TypeScript/Node.js Actions: Implement backend actions in CopilotRuntime. 2. LangChain.js Actions: Integrate LangChain chains as backend actions. 3. LangServe Integration: Connect to hosted LangChain chains. 4. Python SDK: Create remote actions and agents. 5. Agentic Copilots: Deep integration of LangGraph agents in applications. These components enable powerful backend capabilities and AI agent integration.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:00:08.022814"
+      },
+      {
+        "content": "Copilot Suggestions in CopilotKit: The useCopilotChatSuggestions hook generates suggestions in the chat window based on real-time application state. Key features: 1. Simple implementation using the hook with instructions and suggestion count limits. 2. Dependency management - suggestions update based on monitored state changes. 3. Configuration options include: instructions for suggestion generation, minimum and maximum number of suggestions. Note: This feature is experimental and the interface may change. Example usage: Import from @copilotkit/react-ui and implement in components to provide dynamic, state-aware suggestions to users.",
+        "metadata": {},
+        "timestamp": "2024-12-01T18:53:44.404817"
+      },
+      {
+        "content": "CopilotTextarea in CopilotKit: A React component that enhances standard textarea with AI-powered features. Key features: 1. Drop-in replacement for standard textarea with AI autocomplete. 2. Context-aware using useCopilotReadable hook integration. 3. Hovering editor window (Cmd/Ctrl + K) for text modifications. Implementation: a) Install @copilotkit/react-textarea package b) Import styles in root component c) Configure with autosuggestionsConfig including textareaPurpose and chatApiConfigs. Additional features: Customizable appearance, configurable API settings, and integration with application state for intelligent suggestions.",
+        "metadata": {},
+        "timestamp": "2024-12-01T18:54:20.967816"
+      },
+      {
+        "content": "Customizing AI Assistant Behavior in CopilotKit: Two main approaches: 1. Instructions Parameter (Recommended): a) For Copilot UI - Use CopilotChatProps with instructions property to define assistant behavior b) For Headless UI & Programmatic Control - Use useCopilotContext hook's setChatInstructions for dynamic customization. 2. makeSystemMessage Function (Not Recommended): a) Provides complete control over system message b) Available for both Copilot UI and Headless UI implementations c) May interfere with advanced optimizations. Best Practice: Use instructions parameter for better compatibility with platform optimizations and future updates.",
+        "metadata": {},
+        "timestamp": "2024-12-01T18:55:01.313820"
+      },
+      {
+        "content": "Headless UI in CopilotKit: Enables fully custom UI implementation using the useCopilotChat hook. Key features: 1. Complete UI customization while maintaining core functionality. 2. Access to core chat functions: visibleMessages, appendMessage, setMessages, deleteMessage, reloadMessages, stopGeneration, isLoading. 3. Flexibility to implement custom message handling and UI components. Example usage: Import useCopilotChat from @copilotkit/react-core and implement custom chat interface with full control over the UI while leveraging CopilotKit's core functionality.",
+        "metadata": {},
+        "timestamp": "2024-12-01T18:55:47.657315"
+      },
+      {
+        "content": "Bring Your Own LLM in CopilotKit: Allows integration of custom Language Learning Models with CopilotKit. The feature enables users to use any LLM of their choice with the CopilotKit framework, providing flexibility in model selection and implementation.",
+        "metadata": {},
+        "timestamp": "2024-12-01T18:57:31.614815"
+      },
+      {
+        "content": "Connecting Data in CopilotKit: Methods to provide context-specific, user-specific, and realtime data. Key features: 1. Frontend Data Connection: Use useCopilotReadable hook to provide data with description and value. 2. Backend State: Access through Copilot backend actions. 3. Knowledge Bases: Enterprise-level integrations available. Implementation: Import useCopilotReadable from @copilotkit/react-core and define readable state with description and value. The data becomes available to the Copilot for context-aware interactions.",
+        "metadata": {},
+        "timestamp": "2024-12-01T18:58:03.512813"
+      },
+      {
+        "content": "Self-Hosting in CopilotKit: Guide for self-hosting the Copilot Runtime (backend component). Key aspects: 1. Copilot Runtime handles LLM communication, message history, and state management. 2. Integration steps include creating an endpoint and configuring the CopilotKit provider. 3. Alternatives include using Copilot Cloud (recommended). 4. Supports various LLM adapters for different language model integrations. The runtime acts as an intermediary between the React core components and the LLM service.",
+        "metadata": {},
+        "timestamp": "2024-12-01T18:58:54.321817"
+      },
+      {
+        "content": "TypeScript/Node.js Backend Actions in CopilotKit: Implementation guide for native backend actions. Key features: 1. Actions Configuration: Define in CopilotRuntime with name, description, parameters, and handler function. 2. Dynamic Action Generation: Actions array generator takes properties and URL as input for context-aware action availability. 3. Handler Implementation: Implement actual logic in handler function with backend system interaction. 4. Testing: Verify through copilot task execution and response streaming. Example includes user data fetching action with parameter handling and async execution.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:00:47.531315"
+      },
+      {
+        "content": "LangChain.js Integration in CopilotKit: Guide for integrating LangChain JS chains as backend actions. Key features: 1. Stream Support: Actions can return LangChain streams directly. 2. Dynamic Chain Integration: Use ChatPromptTemplate and ChatOpenAI for chain creation. 3. Action Configuration: Similar to TypeScript actions with name, description, and parameters. 4. Example Implementation: Joke generator using LangChain components with streaming response. The integration enables direct use of LangChain's powerful features within CopilotKit's backend actions.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:01:45.888313"
+      },
+      {
+        "content": "LangServe Integration in CopilotKit: Guide for connecting to hosted LangChain chains. Key features: 1. External Chain Integration: Connect to LangChain chains hosted as separate services. 2. Automatic Type Handling: Input and output types automatically fetched from LangServe. 3. Simple Configuration: Define chain URL, name, and description in CopilotRuntime. 4. Testing: Verify through research task execution and result retrieval. The integration enables seamless connection to external LangChain services through LangServe.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:02:29.813313"
+      },
+      {
+        "content": "Remote Endpoint (Python) in CopilotKit: Guide for connecting to Python-based services. Key components: 1. Python SDK Setup: Install copilotkit, fastapi, and uvicorn. 2. FastAPI Server: Create server with CopilotKit endpoint integration. 3. Backend Actions: Define using CopilotAction class with name, description, parameters, and handler. 4. Integration: Configure CopilotRuntime with remoteActions property. Features include dependency management options (Poetry, pip, conda), FastAPI server setup, action definition, and troubleshooting tips. Enables Python backend integration with CopilotKit applications.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:03:05.649815"
+      },
+      {
+        "content": "Built-in Copilot UI Components in CopilotKit: Overview of pre-built UI components. The guide focuses on setting up and using the built-in UI components provided by CopilotKit. These components offer a quick way to implement copilot functionality with pre-designed user interfaces.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:06:21.614814"
+      },
+      {
+        "content": "Customizing Built-in UI Components in CopilotKit: Comprehensive guide for UI customization. Key features: 1. CSS Variables: Easy customization using predefined variables for colors and styles. 2. Custom CSS: Direct CSS class customization for more control. 3. Custom Icons: Customizable icons for various UI elements (open, close, send, etc.). 4. Custom Labels: Configurable text labels for messages, titles, and buttons. 5. Component Swapping: Replace default components with custom implementations. 6. Headless UI Option: Full UI customization capability. The guide provides examples and implementation details for each customization approach.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:10:09.943832"
+      },
+      {
+        "content": "Headless UI in CopilotKit (Custom Look & Feel): Reference to the main Headless UI guide for building fully custom Copilot interfaces. This approach provides complete control over the UI implementation while maintaining core CopilotKit functionality.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:10:41.686315"
+      },
+      {
+        "content": "AI-Powered Textarea Tutorial in CopilotKit: Step-by-step guide to add AI autocompletion to an email application. Key learnings: 1. Using useCopilotReadable for app state awareness. 2. Implementing CopilotTextarea component for context-aware autocompletions. 3. Using Copilot Textarea Action Popup for text generation and modification. The tutorial transforms a simple email client with regular textarea into an AI-powered interface with email history awareness. Difficulty: Easy, Time: 5 minutes.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:12:45.173313"
+      },
+      {
+        "content": "CopilotKit Suggestions Feature: Enables AI-powered suggestions based on real-time application state. Key components: 1. CopilotSuggestions component for displaying suggestions. 2. useCopilotSuggestions hook for managing suggestions state. 3. Integration with application context through useCopilotContext. Main benefits: Proactive assistance, context-aware suggestions, and seamless integration with existing React applications. Implementation requires minimal setup with built-in UI components or can be fully customized using headless mode.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:13:12.375341"
+      },
+      {
+        "content": "CopilotKit Actions Guide: Framework for implementing AI-powered actions in applications. Features: 1. Frontend Actions using useCopilotAction hook for UI interactions. 2. Backend Actions with TypeScript/Node.js SDK for server-side operations. 3. Python SDK support for backend services. Key concepts: Action definition, parameter validation, error handling, and context awareness. Supports both synchronous and asynchronous operations, with built-in TypeScript types for type safety.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:13:40.058316"
+      },
+      {
+        "content": "CopilotKit LangChain Integration Guide: Seamlessly connect LangChain.js chains and agents with CopilotKit. Features: 1. Direct integration with LangChain.js chains as backend actions. 2. Support for LangServe hosted chains. 3. Connection to Python-based LangChain services. Implementation options: Local chain execution, remote endpoints via FastAPI, and hosted services through LangServe. Enables complex AI workflows while maintaining type safety and error handling.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:13:56.194315"
+      },
+      {
+        "content": "Basic Chat Example in CopilotKit: Simple implementation of a chat interface. Features: 1. Basic CopilotKit setup with CopilotProvider. 2. Implementation of CopilotChat component. 3. Basic styling and layout. Key learnings: Setting up authentication, configuring the provider, and implementing a basic chat UI. Perfect starting point for beginners.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:16:04.021316"
+      },
+      {
+        "content": "Email Composer Example in CopilotKit: AI-powered email composition application. Features: 1. CopilotTextarea integration for smart email composition. 2. Email history context awareness using useCopilotReadable. 3. Custom suggestions based on email context. 4. AI-powered email formatting and tone adjustment. Implementation includes frontend state management, email history tracking, and context-aware suggestions.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:16:19.706814"
+      },
+      {
+        "content": "Document Q&A Example in CopilotKit: Interactive document question-answering system. Features: 1. PDF document upload and parsing. 2. Document context integration with CopilotKit. 3. Natural language querying of document content. 4. Backend integration with document processing. 5. Frontend UI for document interaction. Technologies: PDF.js for parsing, vector storage for embeddings, and CopilotKit's context system for Q&A.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:17:05.167814"
+      },
+      {
+        "content": "Task Manager Example in CopilotKit: AI-enhanced project management application. Features: 1. Task creation and management with AI assistance. 2. Natural language task parsing. 3. Smart task categorization and prioritization. 4. Context-aware task suggestions. 5. Backend integration for task persistence. Implementation includes frontend task UI, backend storage, and CopilotKit integration for AI features.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:17:22.651817"
+      },
+      {
+        "content": "Code Editor Example in CopilotKit: AI-powered code editing environment. Features: 1. Syntax-aware code completion. 2. Code explanation and documentation generation. 3. Code refactoring suggestions. 4. Integration with programming language servers. 5. Custom UI with Monaco Editor. Technologies: Monaco Editor for code editing, language servers for code intelligence, and CopilotKit for AI features.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:17:45.017814"
+      },
+      {
+        "content": "Data Dashboard Example in CopilotKit: Interactive data visualization and analysis platform. Features: 1. Natural language queries for data analysis. 2. Dynamic chart generation based on queries. 3. Data context integration with CopilotKit. 4. Custom visualization components. 5. Backend integration for data processing. Technologies: Chart.js for visualization, backend data processing, and CopilotKit's context system for natural language interaction.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:18:01.138817"
+      },
+      {
+        "content": "LangChain Integration Benefits for CopilotKit: 1. Document Processing: Document loaders for various formats, text splitting for optimal chunking, and embeddings for semantic search. 2. Memory Systems: Conversation buffers, vector stores for semantic search, and structured memory for complex data. 3. Agents & Tools: Python REPL for code execution, custom tool creation, and agent frameworks for autonomous operations. 4. Chain Management: Sequential and parallel chain execution, error handling, and output parsing. Key use cases: Document Q&A, code analysis, contextual search, and autonomous task execution.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:29:17.318313"
+      },
+      {
+        "content": "Brave Search Integration Benefits for CopilotKit: 1. Web Search: Real-time web search capabilities for up-to-date information and context. 2. Rate Limiting: Built-in rate limiting for API management and cost control. 3. Error Handling: Robust error handling and response validation. 4. Context Awareness: Integration with CopilotKit's context system for relevant search results. Key use cases: Information retrieval, fact-checking, current events context, and web research assistance.",
+        "metadata": {},
+        "timestamp": "2024-12-01T19:29:34.476815"
+      },
+      {
+        "content": "Testing the updated memory tool to ensure it works with the new format.",
+        "metadata": {
+          "test": true
+        },
+        "timestamp": "2024-12-01T21:48:27.732239"
+      },
+      {
+        "content": "This is a test memory added via curl to verify the memory tool is working properly.",
+        "metadata": {},
+        "timestamp": "2024-12-02T06:57:36.080720"
+      }
+    ]
+  },
+  "context": null,
+  "metadata": {}
+}

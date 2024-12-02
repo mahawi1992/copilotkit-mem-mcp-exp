@@ -16,7 +16,7 @@ from urllib.parse import urlparse
 from tools.base import Tool, BaseTool, ToolType
 from tools.brave_search import BraveSearchTool
 from tools.memory import MemoryTool
-from tools.langchain_tool import LangChainToolWrapper
+# from tools.langchain_tool import LangChainToolWrapper  # Temporarily commented out
 
 # Load environment variables
 load_dotenv()
@@ -178,12 +178,12 @@ async def startup_event():
     # Initialize and register tools
     brave_tool = BraveSearchTool()
     memory_tool = MemoryTool()
-    langchain_tool = LangChainToolWrapper()
+    # langchain_tool = LangChainToolWrapper()  # Temporarily commented out
     
     tools = {
         brave_tool.get_tool_definition().name: brave_tool,
-        memory_tool.get_tool_definition().name: memory_tool,
-        langchain_tool.get_tool_definition().name: langchain_tool
+        memory_tool.get_tool_definition().name: memory_tool
+        # langchain_tool.get_tool_definition().name: langchain_tool  # Temporarily commented out
     }
 
 @app.on_event("shutdown")
@@ -239,4 +239,4 @@ async def search(request: SearchRequest) -> SearchResponse:
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8002)
+    uvicorn.run(app, host="127.0.0.1", port=8003)
