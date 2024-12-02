@@ -23,3 +23,7 @@ build/
 
 # Logs
 *.log
+
+# Keep data directory but ignore everything in it except memories.json
+data/*
+!data/memories.json
